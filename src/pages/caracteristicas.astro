@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import Footer from "../components/Footer.astro";
+import ContactSection from "../components/ContactSection.astro";
+
+const features = [
+  {
+    title: "Inventario en tiempo real",
+    text: "Ve existencias, entradas y salidas en una sola interfaz para evitar inconsistencias.",
+  },
+  {
+    title: "Alertas automáticas",
+    text: "Detecta productos críticos antes de que afecten ventas o entregas.",
+  },
+  {
+    title: "Reportes accionables",
+    text: "Obtén métricas útiles para compras, rotación y disponibilidad.",
+  },
+  {
+    title: "Historial auditado",
+    text: "Sigue cada movimiento por usuario para mantener trazabilidad.",
+  },
+  {
+    title: "Multiubicación",
+    text: "Diseñado para negocios con más de un almacén o punto de venta.",
+  },
+  {
+    title: "Experiencia clara",
+    text: "Una interfaz pensada para aprender rápido y operar sin fricción.",
+  },
+];
+---
+
+<BaseLayout
+  title="Características | Druvle"
+  description="Características principales del software de inventario Druvle, enfocadas en control, trazabilidad y experiencia clara."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Características</p>
+          <h1>
+            Todo lo que necesita una operación para tener inventario bajo
+            control.
+          </h1>
+          <p>
+            Esta página refuerza los beneficios de Druvle con bloques claros,
+            útiles para SEO y para explicar valor a primera vista.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          {
+            features.map((feature) => (
+              <article class="feature-card">
+                <h2>{feature.title}</h2>
+                <p>{feature.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+
+  <Footer />
+</BaseLayout>

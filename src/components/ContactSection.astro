@@ -1,0 +1,30 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  email?: string;
+}
+
+const {
+  title = "¿Quieres ver Druvle en acción?",
+  subtitle = "Cuéntanos tu operación y armamos una demo o propuesta ajustada a tu inventario.",
+  ctaLabel = "Solicitar contacto",
+  email = "hola@druvle.com",
+} = Astro.props;
+---
+
+<section class="contact-section" id="contacto">
+  <div class="container contact-card">
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a class="button button-dark" href={`mailto:${email}`}>{ctaLabel}</a>
+      <a class="button button-ghost" href="/planes">Ver planes</a>
+    </div>
+  </div>
+</section>

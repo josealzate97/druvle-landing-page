@@ -1,0 +1,24 @@
+---
+const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/caracteristicas", label: "Características" },
+  { href: "/planes", label: "Planes" },
+  { href: "/#contacto", label: "Contacto" },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Druvle inicio">
+      <span class="brand-mark">D</span>
+      <span>
+        <strong>Druvle</strong>
+        <small>Software de inventario</small>
+      </span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
