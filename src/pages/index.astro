@@ -18,6 +18,13 @@ const highlights = [
   "Reportes para decisiones rápidas",
   "Diseñado para crecer con tu operación",
 ];
+
+const clients = [
+  { name: "PHILIPS", id: "philips" },
+  { name: "Siemens", id: "siemens" },
+  { name: "DM", id: "dm" },
+  { name: "Paysafe", id: "paysafe" },
+];
 ---
 
 <BaseLayout
@@ -30,7 +37,7 @@ const highlights = [
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Software de inventario</p>
+          <p class="eyebrow">Gestión de inventario</p>
           <h1>Ordena tu inventario con una vista clara, rápida y confiable.</h1>
           <p class="hero-lead">
             Druvle centraliza el control de stock, compras, ventas y alertas
@@ -39,7 +46,7 @@ const highlights = [
           </p>
 
           <div class="hero-actions">
-            <a class="button button-dark" href="/planes">Ver planes</a>
+            <a class="button button-dark" href="/planes">Comenzar ahora</a>
             <a class="button button-ghost" href="/#contacto">Pedir una demo</a>
           </div>
         </div>
@@ -98,15 +105,33 @@ const highlights = [
       </div>
     </section>
 
-    <section class="section">
+    <section class="section clients-section">
       <div class="container">
-        <div class="section-title">
-          <p class="eyebrow">Por qué Druvle</p>
-          <h2>Una landing pensada para convertir visitas en interés real.</h2>
+        <p class="eyebrow" style="text-align: center; margin-bottom: 1.5rem;">
+          Confiado por empresas líderes
+        </p>
+        <div class="clients-grid">
+          {
+            clients.map((client) => (
+              <div class="client-logo" aria-label={client.name}>
+                <span>{client.name}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section tech-section">
+      <div class="container">
+        <div class="tech-content">
+          <p class="eyebrow">Nuestra tecnología</p>
+          <h2>Construida para resolver desafíos del mundo real</h2>
           <p>
-            La propuesta se enfoca en claridad visual, beneficios concretos y
-            una navegación simple hacia las secciones que más importan:
-            características, planes y contacto.
+            Ya sea que busques reducir costos de inventario, eliminar errores
+            manuales, o simplemente operar con más velocidad, tu equipo será
+            capaz de hacerlo con Druvle. Diseñado para empresas que necesitan
+            controlar, escalar y crecer.
           </p>
         </div>
 
@@ -116,8 +141,8 @@ const highlights = [
               <article class="feature-card">
                 <h3>{item}</h3>
                 <p>
-                  Bloques diseñados para explicar valor sin saturar, manteniendo
-                  una lectura ágil en desktop y móvil.
+                  Herramientas diseñadas para explicar valor sin saturar,
+                  manteniendo una experiencia ágil en desktop y móvil.
                 </p>
               </article>
             ))

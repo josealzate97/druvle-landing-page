@@ -2,16 +2,16 @@
 
 :root {
   color-scheme: dark;
-  --bg: #07111f;
-  --bg-soft: #0d1a2b;
-  --surface: rgba(10, 21, 38, 0.85);
-  --surface-strong: #10213a;
-  --border: rgba(255, 255, 255, 0.08);
+  --bg: #0a0e27;
+  --bg-soft: #11152a;
+  --surface: rgba(12, 16, 46, 0.85);
+  --surface-strong: #15203a;
+  --border: rgba(99, 102, 241, 0.12);
   --text: #f4f7fb;
   --muted: #a7b5c9;
-  --brand: #6fe7c8;
-  --brand-2: #f6c35f;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+  --brand: #6366f1;
+  --brand-2: #818cf8;
+  --shadow: 0 30px 80px rgba(99, 102, 241, 0.15);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -31,9 +31,9 @@ body {
   min-height: 100vh;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(111, 231, 200, 0.16), transparent 24%),
-    radial-gradient(circle at right 14%, rgba(246, 195, 95, 0.14), transparent 18%),
-    linear-gradient(180deg, #06101c 0%, #091525 50%, #050b14 100%);
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.15), transparent 24%),
+    radial-gradient(circle at right 14%, rgba(129, 140, 248, 0.1), transparent 18%),
+    linear-gradient(180deg, #050714 0%, #0a0e27 50%, #07091f 100%);
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -187,8 +187,8 @@ main {
 }
 
 .button-dark {
-  color: #06101c;
-  background: linear-gradient(135deg, var(--brand), #d7ffef);
+  color: #0a0e27;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
 }
 
 .button-ghost {
@@ -284,7 +284,7 @@ main {
 }
 
 .pricing-card.featured {
-  border-color: rgba(111, 231, 200, 0.35);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-6px);
 }
 
@@ -305,7 +305,61 @@ main {
   align-items: center;
   gap: 1.5rem;
   padding: 1.8rem;
-  background: linear-gradient(135deg, rgba(111, 231, 200, 0.09), rgba(246, 195, 95, 0.07));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.09), rgba(129, 140, 248, 0.07));
+}
+
+.clients-section {
+  padding: 2rem 0;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.tech-section {
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.05), rgba(129, 140, 248, 0.02));
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.tech-content {
+  max-width: 60rem;
+  margin-bottom: 2rem;
+}
+
+.tech-content h2 {
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.tech-content p {
+  font-size: 1.05rem;
+  color: var(--muted);
 }
 
 .site-footer {
@@ -325,6 +379,7 @@ main {
   .feature-grid,
   .pricing-grid,
   .stats-grid,
+  .clients-grid,
   .contact-card,
   .footer-inner {
     grid-template-columns: 1fr;
@@ -337,7 +392,8 @@ main {
 
   .feature-grid,
   .pricing-grid,
-  .stats-grid {
+  .stats-grid,
+  .clients-grid {
     grid-template-columns: 1fr;
   }
 
