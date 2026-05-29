@@ -1,4 +1,6 @@
 ---
+const currentPath = new URL(Astro.request.url).pathname;
+
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/caracteristicas", label: "Características" },
@@ -10,15 +12,68 @@ const navItems = [
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Druvle inicio">
-      <span class="brand-mark">D</span>
-      <span>
-        <strong>Druvle</strong>
-        <small>Software de inventario</small>
-      </span>
+      <img src="/images/druvle_logo.png" alt="Druvle" class="logo-img" />
     </a>
 
-    <nav aria-label="Navegación principal">
-      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    <button
+      class="mobile-menu-toggle"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" aria-label="Navegación principal">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`nav-link ${currentPath === item.href ? "active" : ""}`}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+  const icon = toggle?.querySelector("i");
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      navMenu?.classList.toggle("active");
+
+      // Cambiar icono
+      if (icon) {
+        if (!isExpanded) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        } else {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      }
+    });
+
+    // Cerrar menú al hacer click en un link
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        navMenu?.classList.remove("active");
+
+        // Volver a mostrar hamburguesa
+        if (icon) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      });
+    });
+  }
+</script>
