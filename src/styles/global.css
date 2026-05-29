@@ -208,6 +208,20 @@ main {
   gap: 2rem;
 }
 
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 70ch;
+}
+
 .eyebrow {
   display: inline-block;
   margin-bottom: 1.2rem;
@@ -246,6 +260,7 @@ main {
   flex-wrap: wrap;
   gap: 1.25rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .button {
@@ -510,6 +525,36 @@ main {
   gap: 2.5rem;
 }
 
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.floating-whatsapp:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .feature-grid,
@@ -588,5 +633,11 @@ main {
 
   nav {
     gap: 0.75rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
   }
 }

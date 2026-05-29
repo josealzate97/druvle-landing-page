@@ -35,9 +35,8 @@ const clients = [
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Gestión de inventario</p>
+      <div class="container hero-center">
+        <div class="hero-content">
           <h1>Ordena tu inventario con una vista clara, rápida y confiable.</h1>
           <p class="hero-lead">
             Druvle centraliza el control de stock, compras, ventas y alertas
@@ -48,43 +47,6 @@ const clients = [
           <div class="hero-actions">
             <a class="button button-dark" href="/planes">Comenzar ahora</a>
             <a class="button button-ghost" href="/#contacto">Pedir una demo</a>
-          </div>
-        </div>
-
-        <div class="hero-panel" aria-label="Vista previa del producto">
-          <div class="dashboard">
-            <div class="dashboard-top">
-              <div>
-                <p class="eyebrow">Panel activo</p>
-                <h2>Resumen operativo</h2>
-              </div>
-              <span class="chip">Actualizado hace 2 min</span>
-            </div>
-
-            <div class="chips">
-              <span class="chip">Stock bajo</span>
-              <span class="chip">Pedidos por revisar</span>
-              <span class="chip">Movimientos del día</span>
-            </div>
-
-            <div class="metrics" style="margin-top: 1rem;">
-              <div class="metric">
-                <span class="eyebrow">Productos críticos</span>
-                <strong>18</strong>
-              </div>
-              <div class="metric">
-                <span class="eyebrow">Entradas hoy</span>
-                <strong>124</strong>
-              </div>
-              <div class="metric">
-                <span class="eyebrow">Ventas hoy</span>
-                <strong>89</strong>
-              </div>
-              <div class="metric">
-                <span class="eyebrow">Exactitud</span>
-                <strong>98%</strong>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -99,23 +61,6 @@ const clients = [
                 <strong>{stat.value}</strong>
                 <p>{stat.label}</p>
               </article>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class="section clients-section">
-      <div class="container">
-        <p class="eyebrow" style="text-align: center; margin-bottom: 1.5rem;">
-          Confiado por empresas líderes
-        </p>
-        <div class="clients-grid">
-          {
-            clients.map((client) => (
-              <div class="client-logo" aria-label={client.name}>
-                <span>{client.name}</span>
-              </div>
             ))
           }
         </div>
