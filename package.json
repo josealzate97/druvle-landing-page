@@ -9,6 +9,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.10.1"
+    "astro": "^5.10.1",
+    "gsap": "^3.15.0",
+    "resend": "^6.12.4",
+    "swiper": "^12.2.0"
   }
 }
