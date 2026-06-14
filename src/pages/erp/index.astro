@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
+---
+
+<BaseLayout
+  title="ERP | Druvle"
+  description="Druvle ERP es un sistema de gestión de inventarios completo para controlar cada movimiento, con trazabilidad total y una experiencia clara."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">ERP</p>
+          <h1>
+            Un sistema de gestión de inventarios completo para controlar cada
+            movimiento, con trazabilidad total y una experiencia clara.
+          </h1>
+          <p>
+            Esta página refuerza los beneficios de Druvle con bloques claros,
+            útiles para SEO y para explicar valor a primera vista.
+          </p>
+        </div>
+
+        <div class="feature-grid"></div>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+
+  <Footer />
+</BaseLayout>

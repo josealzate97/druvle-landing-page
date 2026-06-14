@@ -14,19 +14,45 @@ import Footer from "../components/Footer.astro";
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <p class="eyebrow">Características</p>
+          <p class="eyebrow">Conozca nuestros productos</p>
           <h1>
             Todo lo que necesita una operación para tener inventario bajo
             control.
           </h1>
           <p>
-            Esta página refuerza los beneficios de Druvle con bloques claros,
-            útiles para SEO y para explicar valor a primera vista.
+            Descubra cómo nuestros productos pueden mejorar la eficiencia y el
+            control de su inventario, ofreciendo soluciones claras y efectivas.
           </p>
         </div>
 
-        <div class="feature-grid"></div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h2>Druvle ERP</h2>
+            <p>
+              Un sistema de gestión de inventarios completo para controlar cada
+              movimiento, con trazabilidad total y una experiencia clara.
+            </p>
+
+            <a href="/erp" class="button button-ghost read-more">
+              Ver características
+            </a>
+          </article>
+
+          <article class="feature-card">
+            <h2>Druvle Menus</h2>
+            <p>
+              Un sistema de menús integrado que se conecta directamente con el
+              inventario, para ventas rápidas y control en tiempo real.
+            </p>
+
+            <a href="/menus" class="button button-ghost read-more">
+              Ver características
+            </a>
+          </article>
+        </div>
       </div>
     </section>
-  </main></BaseLayout
->
+  </main>
+
+  <Footer />
+</BaseLayout>
