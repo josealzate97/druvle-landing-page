@@ -15,6 +15,7 @@
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
+  --green: #10b981;
   --content-width: min(1120px, calc(100vw - 2rem));
 }
 
@@ -532,7 +533,7 @@ main {
   right: 2rem;
   width: 60px;
   height: 60px;
-  background: #25D366;
+  background: var(--green);
   border-radius: 50%;
   display: flex;
   align-items: center;
