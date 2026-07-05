@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
+
+const plans = [
+  {
+    name: "Esencial",
+    price: "$19",
+    description: "Ideal para empezar a controlar inventario con orden.",
+    features: ["Hasta 3 usuarios", "Catálogo básico", "Alertas de stock bajo"],
+  },
+  {
+    name: "Crecimiento",
+    price: "$49",
+    description: "El plan más completo para operaciones en expansión.",
+    featured: true,
+    features: [
+      "Usuarios ilimitados",
+      "Reportes avanzados",
+      "Flujos de compras y ventas",
+    ],
+  },
+  {
+    name: "Empresa",
+    price: "Custom",
+    description: "Para equipos que necesitan una implementación a medida.",
+    features: [
+      "Acompañamiento",
+      "Configuraciones especiales",
+      "Soporte prioritario",
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Planes | Druvle Menus"
+  description="Planes de Druvle Menus para inventario, con opciones para empezar rápido o escalar a una operación más compleja."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Planes</p>
+          <h1>Elige el nivel de control que necesita tu inventario.</h1>
+          <p>
+            Una estructura simple de precios para que la landing convierta sin
+            distracciones y permita comparar con rapidez.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          {
+            plans.map((plan) => (
+              <article
+                class={`pricing-card ${plan.featured ? "featured" : ""}`}
+              >
+                <p class="eyebrow">{plan.name}</p>
+                <h2 class="pricing-price">{plan.price}</h2>
+                <p>{plan.description}</p>
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
+                <div class="hero-actions">
+                  <a class="button button-dark" href="/#contacto">
+                    Elegir plan
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <ContactSection
+      title="Pide una propuesta para tu operación"
+      subtitle="Si manejas múltiples almacenes, sucursales o catálogos grandes, podemos ajustar el plan al flujo real de tu negocio."
+      ctaLabel="Hablar con ventas"
+    />
+  </main>
+
+  <Footer />
+</BaseLayout>

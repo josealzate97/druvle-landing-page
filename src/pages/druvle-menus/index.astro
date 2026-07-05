@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
 ---
 
 <BaseLayout
@@ -23,11 +24,19 @@ import Footer from "../../components/Footer.astro";
             Esta página refuerza los beneficios de Druvle con bloques claros,
             útiles para SEO y para explicar valor a primera vista.
           </p>
+
+          <div class="hero-actions" style="justify-content:flex-start">
+            <a class="button button-dark" href="/druvle-menus/planes">
+              Ver planes
+            </a>
+          </div>
         </div>
 
         <div class="feature-grid"></div>
       </div>
     </section>
+
+    <ContactSection />
   </main>
 
   <Footer />
