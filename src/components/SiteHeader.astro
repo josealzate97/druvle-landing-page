@@ -15,13 +15,25 @@ const navItems = [
       <img src="/images/druvle_logo.png" alt="Druvle" class="logo-img" />
     </a>
 
-    <button
-      class="mobile-menu-toggle"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+    <div class="header-actions">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Cambiar modo de color"
+        aria-pressed="false"
+      >
+        <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+      </button>
+
+      <button
+        class="mobile-menu-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
 
     <nav class="nav-menu" aria-label="Navegación principal">
       {
@@ -74,6 +86,53 @@ const navItems = [
           icon.classList.add("fa-bars");
         }
       });
+    });
+  }
+
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-toggle-icon");
+
+  const applyTheme = (theme: any) => {
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+
+    const isDark = theme === "dark";
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+    if (themeIcon) {
+      themeIcon.classList.toggle("fa-sun", isDark === true);
+      themeIcon.classList.toggle("fa-moon", isDark === false);
+
+      // (Si está en dark: mostrar sol; si está en light: mostrar luna)
+      if (isDark) {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      } else {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+      }
+    }
+  };
+
+  const storedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia?.(
+    "(prefers-color-scheme: dark)",
+  )?.matches;
+
+  const initialTheme = storedTheme
+    ? storedTheme
+    : prefersDark
+      ? "dark"
+      : "light";
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.dataset.theme || "light";
+      const next = current === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      applyTheme(next);
     });
   }
 </script>
