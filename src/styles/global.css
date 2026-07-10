@@ -40,14 +40,12 @@
 }
 
 :root[data-theme="dark"] body {
-  background:
-    radial-gradient(circle at top left, rgba(96, 165, 250, 0.14), transparent 30%),
-    radial-gradient(circle at right 14%, rgba(147, 197, 253, 0.10), transparent 25%),
-    linear-gradient(180deg, #0b1220 0%, #0f1a2e 50%, #0b1326 100%);
+  background-color: #121212;
+  background-image: none;
 }
 
 :root[data-theme="dark"] .site-header {
-  background: rgba(15, 26, 46, 0.72);
+  background: #121212;
   border-bottom: 1px solid rgba(96, 165, 250, 0.22);
 }
 
@@ -191,6 +189,10 @@ img {
   width: auto;
   max-width: 140px;
   display: block;
+}
+
+.logo-img--dark {
+  display: none;
 }
 
 .brand strong {
@@ -647,6 +649,14 @@ main {
   background: rgba(15, 26, 46, 0.55);
   border-color: rgba(96, 165, 250, 0.22);
   color: var(--brand-2);
+}
+
+:root[data-theme="dark"] .logo-img--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-img--dark {
+  display: block;
 }
 
 .nav-menu {
