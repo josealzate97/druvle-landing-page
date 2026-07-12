@@ -6,12 +6,12 @@
   --bg-soft: #f8f9fb;
   --surface: rgba(248, 249, 251, 0.95);
   --surface-strong: #f0f1f5;
-  --border: rgba(59, 130, 246, 0.15);
-  --text: #1a1f3a;
+  --border: rgba(17, 24, 39, 0.12);
+  --text: #0b1220;
   --muted: #6b7280;
-  --brand: #3b82f6;
-  --brand-2: #60a5fa;
-  --shadow: 0 10px 30px rgba(59, 130, 246, 0.12);
+  --brand: #0b1220;
+  --brand-2: #111827;
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -28,15 +28,15 @@
   --surface: rgba(15, 26, 46, 0.86);
   --surface-strong: rgba(22, 38, 66, 0.95);
 
-  --border: rgba(96, 165, 250, 0.18);
+  --border: rgba(255, 255, 255, 0.14);
 
   --text: #e8eefc;
   --muted: rgba(232, 238, 252, 0.7);
 
-  --brand: #60a5fa;
-  --brand-2: #93c5fd;
+  --brand: #ffffff;
+  --brand-2: rgba(255, 255, 255, 0.9);
 
-  --shadow: 0 10px 30px rgba(96, 165, 250, 0.18);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 :root[data-theme="dark"] body {
@@ -46,21 +46,21 @@
 
 :root[data-theme="dark"] .site-header {
   background: #121212;
-  border-bottom: 1px solid rgba(96, 165, 250, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 :root[data-theme="dark"] .hero {
-  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background: linear-gradient(
     135deg,
-    rgba(96, 165, 250, 0.12) 0%,
-    rgba(147, 197, 253, 0.06) 50%,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
     transparent 100%
   );
 }
 
 :root[data-theme="dark"] .hero::before {
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
 }
 
 :root[data-theme="dark"] .hero-panel,
@@ -70,34 +70,35 @@
 :root[data-theme="dark"] .contact-card,
 :root[data-theme="dark"] .dashboard,
 :root[data-theme="dark"] .client-logo {
-  border: 1px solid rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(
     180deg,
     rgba(15, 26, 46, 0.75),
     rgba(22, 38, 66, 0.55)
   );
-  box-shadow: 0 8px 24px rgba(96, 165, 250, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 :root[data-theme="dark"] .dashboard {
   background: linear-gradient(180deg, rgba(15, 26, 46, 0.9), rgba(11, 19, 38, 0.95));
-  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 :root[data-theme="dark"] .button-ghost {
-  border-color: rgba(96, 165, 250, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
   color: var(--brand-2);
   background: transparent;
 }
 
 :root[data-theme="dark"] .button-ghost:hover {
-  border-color: rgba(147, 197, 253, 0.55);
-  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 :root[data-theme="dark"] .client-logo {
   background: rgba(15, 26, 46, 0.55);
 }
+
 
 :root[data-theme="dark"] .nav-link {
   color: rgba(232, 238, 252, 0.75);
@@ -107,6 +108,7 @@
 :root[data-theme="dark"] .nav-link.active {
   color: var(--brand-2);
 }
+
 
 * {
   box-sizing: border-box;
@@ -121,11 +123,12 @@ body {
   min-height: 100vh;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 30%),
-    radial-gradient(circle at right 14%, rgba(96, 165, 250, 0.06), transparent 25%),
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.05), transparent 30%),
+    radial-gradient(circle at right 14%, rgba(0, 0, 0, 0.03), transparent 25%),
     linear-gradient(180deg, #ffffff 0%, #f8f9fb 50%, #f3f4f9 100%);
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
 
 a {
   color: inherit;
