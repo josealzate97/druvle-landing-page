@@ -129,6 +129,18 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* Anti-flash: mientras el tema se inicializa */
+html[data-theme-initializing='true'] body {
+  background: #0b1220 !important;
+  color: #e8eefc !important;
+}
+
+html[data-theme-initializing='false'] body {
+  background: inherit;
+  color: inherit;
+}
+
+
 
 a {
   color: inherit;
