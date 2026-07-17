@@ -19,95 +19,7 @@
   --content-width: min(1120px, calc(100vw - 2rem));
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
 
-  --bg: #0b1220;
-  --bg-soft: #0f1a2e;
-
-  --surface: rgba(15, 26, 46, 0.86);
-  --surface-strong: rgba(22, 38, 66, 0.95);
-
-  --border: rgba(255, 255, 255, 0.14);
-
-  --text: #e8eefc;
-  --muted: rgba(232, 238, 252, 0.7);
-
-  --brand: #ffffff;
-  --brand-2: rgba(255, 255, 255, 0.9);
-
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-:root[data-theme="dark"] body {
-  background-color: #121212;
-  background-image: none;
-}
-
-:root[data-theme="dark"] .site-header {
-  background: #121212;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-:root[data-theme="dark"] .hero {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    transparent 100%
-  );
-}
-
-:root[data-theme="dark"] .hero::before {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
-}
-
-:root[data-theme="dark"] .hero-panel,
-:root[data-theme="dark"] .feature-card,
-:root[data-theme="dark"] .pricing-card,
-:root[data-theme="dark"] .stat-card,
-:root[data-theme="dark"] .contact-card,
-:root[data-theme="dark"] .dashboard,
-:root[data-theme="dark"] .client-logo {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(
-    180deg,
-    rgba(15, 26, 46, 0.75),
-    rgba(22, 38, 66, 0.55)
-  );
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-:root[data-theme="dark"] .dashboard {
-  background: linear-gradient(180deg, rgba(15, 26, 46, 0.9), rgba(11, 19, 38, 0.95));
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-}
-
-:root[data-theme="dark"] .button-ghost {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: var(--brand-2);
-  background: transparent;
-}
-
-:root[data-theme="dark"] .button-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-:root[data-theme="dark"] .client-logo {
-  background: rgba(15, 26, 46, 0.55);
-}
-
-
-:root[data-theme="dark"] .nav-link {
-  color: rgba(232, 238, 252, 0.75);
-}
-
-:root[data-theme="dark"] .nav-link:hover,
-:root[data-theme="dark"] .nav-link.active {
-  color: var(--brand-2);
-}
 
 
 * {
@@ -129,16 +41,7 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Anti-flash: mientras el tema se inicializa */
-html[data-theme-initializing='true'] body {
-  background: #0b1220 !important;
-  color: #e8eefc !important;
-}
 
-html[data-theme-initializing='false'] body {
-  background: inherit;
-  color: inherit;
-}
 
 
 
@@ -659,20 +562,7 @@ main {
   font-size: 1.1rem;
 }
 
-/* In dark mode, lighten the toggle surface a bit */
-:root[data-theme="dark"] .theme-toggle {
-  background: rgba(15, 26, 46, 0.55);
-  border-color: rgba(96, 165, 250, 0.22);
-  color: var(--brand-2);
-}
 
-:root[data-theme="dark"] .logo-img--light {
-  display: none;
-}
-
-:root[data-theme="dark"] .logo-img--dark {
-  display: block;
-}
 
 .nav-menu {
   display: flex;

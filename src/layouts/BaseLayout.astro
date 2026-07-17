@@ -31,40 +31,10 @@ const { title, description } = Astro.props;
         `
       (function(){
         try{
-          var stored = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
-          var theme = stored ? stored : (prefersDark ? 'dark' : 'light');
-
-          // Anti-flash: marcar mientras inicializa
-          document.documentElement.dataset.themeInitializing = 'true';
-
-          // Aplicar lo más temprano posible
-          document.documentElement.dataset.theme = theme;
-
-          // Fondo inmediato (por si el CSS aún no aplicó)
-          var bgLight = '#ffffff';
-          var bgDark = '#0b1220';
-
-          // Controlar fondo del documento y del body para evitar cualquier frame blanco
-          document.documentElement.style.backgroundColor = theme === 'dark' ? bgDark : bgLight;
-
-          var body = document.body;
-          if(body){
-            body.style.backgroundColor = theme === 'dark' ? bgDark : bgLight;
-          } else {
-            document.addEventListener('DOMContentLoaded', function(){
-              document.body && (document.body.style.backgroundColor = theme === 'dark' ? bgDark : bgLight);
-            });
-          }
-
-
-          // Desactivar modo inicializador después de tener el tema y el background
-          // (evita que el navegador pinte un frame en blanco)
-          document.documentElement.dataset.themeInitializing = 'false';
-
+          // Forzar siempre modo día
+          document.documentElement.dataset.theme = 'light';
         } catch(e){}
       })();
-
     `;
       }
     </script>
@@ -75,6 +45,5 @@ const { title, description } = Astro.props;
     <FloatingWhatsApp />
 
     <script src="/scripts/mobile-menu.js" defer></script>
-    <script src="/scripts/theme-toggle.js" defer></script>
   </body>
 </html>
